@@ -3,30 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Przykład formularza</title>
+    <title>Formularz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+        }
+        .checkbox-group input {
+            margin-left: 10px;
+        }
+        .age-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .age-group label {
+            font-weight: normal;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
+    <form>
+        <h1>Formularz uczestnictwa w turnieju</h1>
 
-    <h1>Formularz kontaktowy</h1>
-    <form action="/submit" method="post">
         <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Wiadomość:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        
-        <label for="subject">Temat:</label>
-        <select id="subject" name="subject">
-            <option value="zapytanie">Zapytanie</option>
-            <option value="wsparcie">Wsparcie</option>
-            <option value="inne">Inne</option>
-        </select>
-        
-        <button type="submit">Wyślij</button>
+        <input type="text" id="name" name="name">
+
+        <label for="surname">Nazwisko:</label>
+        <input type="text" id="surname" name="surname">
+
+        <label for="address">Adres zamieszkania:</label>
+        <input type="text" id="address" name="address">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email">
+
+        <label>Wybierz wiek:</label>
+        <div class="age-group">
+            <label><input type="radio" name="age" value="18+"> 18+</label>
+            <label><input type="radio" name="age" value="16-18"> Od lat 16</label>
+            <label><input type="radio" name="age" value="12-16"> Od lat 12</label>
+        </div>
+
+        <label>Na czym grasz?</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="device" value="PC"> PC</label>
+            <label><input type="checkbox" name="device" value="Konsola"> Konsola</label>
+            <label><input type="checkbox" name="device" value="Telefon"> Telefon</label>
+        </div>
+
+        <label for="date">Data:</label>
+        <input type="date" id="date" name="date">
+
+        <label for="rules">Zgoda na regulamin:</label>
+        <input type="checkbox" id="rules" name="rules"> Wyrażam zgodę
+
+        <div class="buttons">
+            <button type="submit">Potwierdź</button>
+            <button type="reset">Anuluj</button>
+        </div>
     </form>
-    <a href="indexxx.html">wroc</a>
 </body>
 </html>
